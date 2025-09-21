@@ -63,5 +63,71 @@ namespace DesafioFundamentos.Models
                 Console.WriteLine("Não há veículos estacionados.");
             }
         }
+
+        public bool ValidarPlaca(string placa)
+        {
+            // Validar o formato da placa -> 
+            // Validação tanto no modelo antigo (ABC1234) como no modelo mercosul (ABC1D34)
+
+            // Padronização da placa
+            string placaNormalizada = placa.Trim().ToUpper().Replace("-", "");
+
+            // Verificar a quantidade de caracteres passada
+            if (placaNormalizada.Length == 7)
+            {
+                // Verificação do Modelo tradicional
+                if (Char.IsDigit(placaNormalizada[4]))
+                {
+                    for (int item = 0; item < 3; item++)
+                    {
+                        if (!Char.IsLetter(placaNormalizada[item]))
+                        {
+                            return false;
+                        }
+                    }
+
+                    for (int item = 3; item < placaNormalizada.Length; item++)
+                    {
+                        if (!Char.IsDigit(placaNormalizada[item]))
+                        {
+                            return false;
+                        }
+                    }
+
+                }
+                // Verificação do modelo Mercosul
+                else if (Char.IsLetter(placaNormalizada[4]))
+                {
+                    for (int item = 0; item < 3; item++)
+                    {
+                        if (!Char.IsLetter(placaNormalizada[item]))
+                        {
+                            return false;
+                        }
+                    }
+
+                    if (!Char.IsDigit(placaNormalizada[3]))
+                    {
+                        return false;
+                    }
+
+                    if (!Char.IsDigit(placaNormalizada[5]))
+                    {
+                        return false;
+                    }
+
+                    if (!Char.IsDigit(placaNormalizada[6]))
+                    {
+                        return false;
+                    }
+                }   
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
     }
 }
