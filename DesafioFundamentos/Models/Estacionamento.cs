@@ -14,8 +14,6 @@ namespace DesafioFundamentos.Models
 
         public void AdicionarVeiculo()
         {
-            // TODO: Pedir para o usuário digitar uma placa (ReadLine) e adicionar na lista "veiculos"
-            // *IMPLEMENTE AQUI*
             Console.WriteLine("Digite a placa do veículo para estacionar:");
 
             string placa = Console.ReadLine().ToUpper();
@@ -36,25 +34,17 @@ namespace DesafioFundamentos.Models
         {
             Console.WriteLine("Digite a placa do veículo para remover:");
 
-            // Pedir para o usuário digitar a placa e armazenar na variável placa
-            // *IMPLEMENTE AQUI*
             string placa = Console.ReadLine().ToUpper();
 
-            // Verifica se o veículo existe
             if (veiculos.Any(x => x.ToUpper() == placa.ToUpper()))
             {
                 Console.WriteLine("Digite a quantidade de horas que o veículo permaneceu estacionado:");
 
-                // TODO: Pedir para o usuário digitar a quantidade de horas que o veículo permaneceu estacionado,
-                // TODO: Realizar o seguinte cálculo: "precoInicial + precoPorHora * horas" para a variável valorTotal                
-                // *IMPLEMENTE AQUI*
                 string strHoras = Console.ReadLine();
                 int.TryParse(strHoras, out int horas);
                 decimal valorTotal = precoInicial + (precoPorHora * horas);
 
-                // TODO: Remover a placa digitada da lista de veículos
                 veiculos.Remove(placa);
-                // *IMPLEMENTE AQUI*
 
                 Console.WriteLine($"O veículo {placa} foi removido e o preço total foi de: R$ {valorTotal}");
             }
@@ -66,7 +56,6 @@ namespace DesafioFundamentos.Models
 
         public void ListarVeiculos()
         {
-            // Verifica se há veículos no estacionamento
             if (veiculos.Any())
             {
                 Console.WriteLine("Os veículos estacionados são:");
@@ -85,13 +74,10 @@ namespace DesafioFundamentos.Models
 
         public bool ValidarPlaca(string placa)
         {
-            // Validar o formato da placa -> 
-            // Validação tanto no modelo antigo (ABC1234) como no modelo mercosul (ABC1D34)
+            // Validação do formato da placa tanto no modelo antigo (ABC1234) como no modelo mercosul (ABC1D34)
 
-            // Padronização da placa
             string placaNormalizada = placa.Trim().ToUpper().Replace("-", "");
 
-            // Verificar a quantidade de caracteres passada
             if (placaNormalizada.Length == 7)
             {
                 // Verificação do Modelo tradicional
