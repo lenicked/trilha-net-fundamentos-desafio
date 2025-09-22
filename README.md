@@ -1,38 +1,65 @@
-# DIO - Trilha .NET - Fundamentos
-www.dio.me
+# TRILHA-NET-FUNDAMENTOS-DESAFIO
 
-## Desafio de projeto
-Para este desafio, você precisará usar seus conhecimentos adquiridos no módulo de fundamentos, da trilha .NET da DIO.
+> Streamlining Parking Management with Innovation and Precision
 
-## Contexto
-Você foi contratado para construir um sistema para um estacionamento, que será usado para gerenciar os veículos estacionados e realizar suas operações, como por exemplo adicionar um veículo, remover um veículo (e exibir o valor cobrado durante o período) e listar os veículos.
+<p align="center">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/lenicked/trilha-net-fundamentos-desafio?style=for-the-badge&logo=github&color=blue">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/lenicked/trilha-net-fundamentos-desafio?style=for-the-badge&logo=c-sharp&logoColor=white&color=blueviolet">
+  <img alt="License" src="https://img.shields.io/github/license/lenicked/trilha-net-fundamentos-desafio?style=for-the-badge&color=informational">
+</p>
 
-## Proposta
-Você precisará construir uma classe chamada "Estacionamento", conforme o diagrama abaixo:
-![Diagrama de classe estacionamento](diagrama_classe_estacionamento.png)
+## 📋 Table of Contents
 
-A classe contém três variáveis, sendo:
-
-**precoInicial**: Tipo decimal. É o preço cobrado para deixar seu veículo estacionado.
-
-**precoPorHora**: Tipo decimal. É o preço por hora que o veículo permanecer estacionado.
-
-**veiculos**: É uma lista de string, representando uma coleção de veículos estacionados. Contém apenas a placa do veículo.
-
-A classe contém três métodos, sendo:
-
-**AdicionarVeiculo**: Método responsável por receber uma placa digitada pelo usuário e guardar na variável **veiculos**.
-
-**RemoverVeiculo**: Método responsável por verificar se um determinado veículo está estacionado, e caso positivo, irá pedir a quantidade de horas que ele permaneceu no estacionamento. Após isso, realiza o seguinte cálculo: **precoInicial** * **precoPorHora**, exibindo para o usuário.
-
-**ListarVeiculos**: Lista todos os veículos presentes atualmente no estacionamento. Caso não haja nenhum, exibir a mensagem "Não há veículos estacionados".
-
-Por último, deverá ser feito um menu interativo com as seguintes ações implementadas:
-1. Cadastrar veículo
-2. Remover veículo
-3. Listar veículos
-4. Encerrar
+- [Overview](#-overview)
+- [Features](#-features)
+- [Getting Started](#-getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Usage](#usage)
+- [Testing](#-testing)
+- [Contributing](#-contributing)
+- [License](#-license)
 
 
-## Solução
-O código está pela metade, e você deverá dar continuidade obedecendo as regras descritas acima, para que no final, tenhamos um programa funcional. Procure pela palavra comentada "TODO" no código, em seguida, implemente conforme as regras acima.
+## 🔭 Overview
+
+`trilha-net-fundamentos-desafio` is a comprehensive developer tool for building vehicle parking management systems in a .NET environment. It encapsulates core parking operations such as vehicle registration, removal, listing, and fee calculation, all within a clean, organized architecture.
+
+This project aims to streamline parking system development by providing a ready-to-use core logic and user interface.
+
+## ✨ Features
+
+* 🚗 **Vehicle Management:** Add, remove, and list vehicles efficiently within the parking lot.
+* 💰 **Fee Calculation:** Automatically compute parking fees based on duration, ensuring accurate billing.
+* 🏗️ **Modular Architecture:** Well-structured code that simplifies maintenance and future enhancements.
+* 🖥️ **User-Friendly Interface:** Interactive menu for seamless user operations.
+* 🚀 **Modern .NET 6.0 Compatibility:** Leverages the .NET 6 framework standards for performance and reliability.
+
+## 🚀 Getting Started
+
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+This project requires the following software to be installed on your machine:
+* [.NET 6 SDK](https://dotnet.microsoft.com/download/dotnet/6.0)
+* [Git](https://git-scm.com/downloads)
+
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/lenicked/trilha-net-fundamentos-desafio](https://github.com/lenicked/trilha-net-fundamentos-desafio)
+    ```
+
+2.  **Navigate to the project directory:**
+    ```bash
+    cd trilha-net-fundamentos-desafio
+    ```
+
+### Usage
+
+To run the application, execute the following command in your terminal from the project's root directory:
+
+```bash
+dotnet run
